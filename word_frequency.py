@@ -3,31 +3,40 @@ STOP_WORDS = [
     'he', 'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to',
     'were', 'will', 'with'
 ]
-
-
 class FileReader:
+
     def __init__(self, filename):
-        pass
+        self.filename = "one-today.txt"
 
     def read_contents(self):
-        """
-        This should read all the contents of the file
-        and return them as one string.
-        """
-        raise NotImplementedError("FileReader.read_contents")
+        self.onetoday = open(self.filename, "r")
+        self.onetoday.close()
+        print (self.onetoday)
 
+    def removepunc(self, qty='0'):
+        self.punctuation = (",","'",".","!")
+        remove = qty
+        self.onetoday.remove(self.punctuation)
+        print (self.onetoday)
 
+    def contain_text(self):
+        self.text = ()
+        self.text.append(self.onetoday)
+        
 class WordList:
+
     def __init__(self, text):
-        pass
+        self.text = text
+        self.words = []
+        self.separatedwords = {}
+        
 
     def extract_words(self):
-        """
-        This should get all words from the text. This method
-        is responsible for lowercasing all words and stripping
-        them of punctuation.
-        """
-        raise NotImplementedError("WordList.extract_words")
+            self.eachword = self.onetoday.split()
+            self.letters = self.eachword.lower()
+            print (self.letters)
+
+        # raise NotImplementedError("WordList.extract_words")
 
     def remove_stop_words(self):
         """
